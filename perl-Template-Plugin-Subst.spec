@@ -15,6 +15,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
 BuildRequires: perl(Template)
 BuildRequires: perl(Test::More)
+BuildRequires: perl(Module::Build::Compat)
 
 BuildArch: noarch
 
