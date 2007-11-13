@@ -35,7 +35,7 @@ method.  C<replace> doesn't deal with backrefs, so code like this:
 %setup -q -n %{realname}-%{version} 
 
 %build
-yes | %{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
