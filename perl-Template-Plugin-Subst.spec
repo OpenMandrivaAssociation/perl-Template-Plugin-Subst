@@ -1,7 +1,7 @@
 
 %define realname   Template-Plugin-Subst
 %define version    0.02
-%define release    %mkrel 3
+%define release    %mkrel 4
 
 Name:       perl-%{realname}
 Version:    %{version}
