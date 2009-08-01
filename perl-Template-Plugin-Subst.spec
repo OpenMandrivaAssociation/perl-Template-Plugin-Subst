@@ -1,23 +1,21 @@
+%define upstream_name    Template-Plugin-Subst
+%define upstream_version 0.02
 
-%define realname   Template-Plugin-Subst
-%define version    0.02
-%define release    %mkrel 4
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    s/// functionality for Template Toolkit templates
-Source:     http://www.cpan.org/modules/by-module/Template/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Template/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Template)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
-
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Template::Plugin::Subst acts as a filter and a virtual method to carry
@@ -30,10 +28,8 @@ method.  C<replace> doesn't deal with backrefs, so code like this:
   [% str = 'foobar' %]
   [% str.replace('(foo)(bar)', '$2$1') %]
 
-
-
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -54,6 +50,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc META.yml Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
-
