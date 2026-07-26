@@ -1,15 +1,13 @@
 %define upstream_name    Template-Plugin-Subst
-%define upstream_version 0.02
-
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    4
+Version:    0.02
+Release:    5
 
 Summary:    s/// functionality for Template Toolkit templates
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Template/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Template/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Template)
@@ -30,7 +28,7 @@ method.  C<replace> doesn't deal with backrefs, so code like this:
   [% str.replace('(foo)(bar)', '$2$1') %]
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -60,9 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
 + Revision: 405535
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.02-4mdv2009.0
+- rebuild using %0.02 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.02-4mdv2009.0
 + Revision: 258484
 - rebuild
 
