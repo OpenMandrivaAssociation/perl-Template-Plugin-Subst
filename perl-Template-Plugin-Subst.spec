@@ -1,13 +1,14 @@
 %define upstream_name    Template-Plugin-Subst
+%define upstream_version 0.02
 Name:       perl-%{upstream_name}
-Version:    0.02
-Release:    5
+Version:	0.02
+Release:	1
 
 Summary:    s/// functionality for Template Toolkit templates
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://metacpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Template/%{upstream_name}-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIKC/Template-Plugin-Subst-0.02.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl(Template)
@@ -49,32 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc META.yml Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
-%changelog
-* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 0.20.0-2mdv2011.0
-+ Revision: 658883
-- rebuild for updated spec-helper
-
-* Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
-+ Revision: 405535
-- rebuild using %0.02 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.02-4mdv2009.0
-+ Revision: 258484
-- rebuild
-
-* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 0.02-3mdv2009.0
-+ Revision: 246509
-- rebuild
-- kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Tue Nov 13 2007 Jérôme Quelin <jquelin@mandriva.org> 0.02-1mdv2008.1
-+ Revision: 108476
-- requiring perl(Module::Build)
-- remove yes call
-- import perl-Template-Plugin-Subst
-
 
 
