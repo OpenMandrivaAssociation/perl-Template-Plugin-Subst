@@ -2,7 +2,7 @@
 %define upstream_version 0.02
 Name:       perl-%{upstream_name}
 Version:	0.02
-Release:	3
+Release:	4
 
 Summary:    s/// functionality for Template Toolkit templates
 License:    GPL+ or Artistic
@@ -11,11 +11,11 @@ Url:        https://metacpan.org/dist/%{upstream_name}
 Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIKC/Template-Plugin-Subst-0.02.tar.gz
 
 BuildRequires:	make
+BuildRequires:	perl-devel
 BuildRequires: perl(Template)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Template::Plugin::Subst acts as a filter and a virtual method to carry
@@ -32,7 +32,7 @@ method.  C<replace> doesn't deal with backrefs, so code like this:
 %setup -q -n Template-Plugin-Subst-0.02
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
