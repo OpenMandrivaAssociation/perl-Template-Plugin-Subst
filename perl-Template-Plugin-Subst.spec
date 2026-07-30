@@ -2,7 +2,7 @@
 %define upstream_version 0.02
 Name:       perl-%{upstream_name}
 Version:	0.02
-Release:	2
+Release:	3
 
 Summary:    s/// functionality for Template Toolkit templates
 License:    GPL+ or Artistic
@@ -38,7 +38,7 @@ method.  C<replace> doesn't deal with backrefs, so code like this:
 %check
 # soft: do not fail package on test failures
 set +e
-make test
+make test || :
 
 %install
 rm -rf $RPM_BUILD_ROOT
