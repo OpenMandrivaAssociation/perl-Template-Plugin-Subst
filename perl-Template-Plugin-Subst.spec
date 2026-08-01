@@ -2,7 +2,7 @@
 %define upstream_version 0.02
 Name:       perl-%{upstream_name}
 Version:	0.02
-Release:	4
+Release:	5
 
 Summary:    s/// functionality for Template Toolkit templates
 License:    GPL+ or Artistic
